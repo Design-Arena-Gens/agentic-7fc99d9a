@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Retro OS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <canvas id="snow-canvas"></canvas>
+
+    <div class="desktop">
+        <div class="taskbar">
+            <div class="taskbar-start">
+                <div class="start-button">
+                    <span class="start-icon">❄</span>
+                    <span>Start</span>
+                </div>
+                <div class="taskbar-apps" id="taskbar-apps"></div>
+            </div>
+            <div class="taskbar-clock" id="clock">00:00:00</div>
+        </div>
+
+        <div class="desktop-icons">
+            <div class="desktop-icon" data-window="terminal">
+                <div class="icon-image">▶</div>
+                <div class="icon-label">Terminal</div>
+            </div>
+            <div class="desktop-icon" data-window="about">
+                <div class="icon-image">ℹ</div>
+                <div class="icon-label">About</div>
+            </div>
+            <div class="desktop-icon" data-window="files">
+                <div class="icon-image">📁</div>
+                <div class="icon-label">Files</div>
+            </div>
+        </div>
+
+        <div class="window" id="terminal-window" data-window-id="terminal">
+            <div class="window-titlebar">
+                <span class="window-title">Terminal - C:\WINTER\</span>
+                <div class="window-controls">
+                    <button class="window-btn minimize">_</button>
+                    <button class="window-btn maximize">□</button>
+                    <button class="window-btn close">×</button>
+                </div>
+            </div>
+            <div class="window-content terminal-content">
+                <div class="terminal-output" id="terminal-output">
+                    <div class="terminal-line">Winter Retro OS v1.0</div>
+                    <div class="terminal-line">Copyright (c) 1995-2025 Winter Corp.</div>
+                    <div class="terminal-line">Type 'help' for available commands.</div>
+                    <div class="terminal-line">&nbsp;</div>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="terminal-prompt">C:\&gt;</span>
+                    <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false">
+                    <span class="terminal-cursor">_</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="about-window" data-window-id="about">
+            <div class="window-titlebar">
+                <span class="window-title">About Winter Retro OS</span>
+                <div class="window-controls">
+                    <button class="window-btn minimize">_</button>
+                    <button class="window-btn maximize">□</button>
+                    <button class="window-btn close">×</button>
+                </div>
+            </div>
+            <div class="window-content about-content">
+                <div class="about-header">
+                    <div class="about-logo">❄️</div>
+                    <h2>Winter Retro OS</h2>
+                    <p class="version">Version 1.0.0</p>
+                </div>
+                <div class="about-info">
+                    <p><strong>Built with:</strong></p>
+                    <ul>
+                        <li>HTML5 Canvas API</li>
+                        <li>Modern ES6+ JavaScript</li>
+                        <li>CSS3 Animations</li>
+                        <li>Object-Oriented Architecture</li>
+                    </ul>
+                    <p><strong>Features:</strong></p>
+                    <ul>
+                        <li>Advanced snow particle physics</li>
+                        <li>CRT monitor effects</li>
+                        <li>Draggable windows</li>
+                        <li>Interactive terminal</li>
+                        <li>Retro 90s aesthetic</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="files-window" data-window-id="files">
+            <div class="window-titlebar">
+                <span class="window-title">File Explorer - C:\</span>
+                <div class="window-controls">
+                    <button class="window-btn minimize">_</button>
+                    <button class="window-btn maximize">□</button>
+                    <button class="window-btn close">×</button>
+                </div>
+            </div>
+            <div class="window-content files-content">
+                <div class="file-toolbar">
+                    <button class="toolbar-btn">◀ Back</button>
+                    <button class="toolbar-btn">▶ Forward</button>
+                    <div class="address-bar">C:\WINTER\</div>
+                </div>
+                <div class="file-list">
+                    <div class="file-item folder">
+                        <span class="file-icon">📁</span>
+                        <span class="file-name">Documents</span>
+                    </div>
+                    <div class="file-item folder">
+                        <span class="file-icon">📁</span>
+                        <span class="file-name">System</span>
+                    </div>
+                    <div class="file-item folder">
+                        <span class="file-icon">📁</span>
+                        <span class="file-name">Programs</span>
+                    </div>
+                    <div class="file-item file">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">README.TXT</span>
+                    </div>
+                    <div class="file-item file">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">AUTOEXEC.BAT</span>
+                    </div>
+                    <div class="file-item file">
+                        <span class="file-icon">🎵</span>
+                        <span class="file-name">WINTER.MID</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="snow-engine.js"></script>
+    <script src="window-manager.js"></script>
+    <script src="terminal.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
